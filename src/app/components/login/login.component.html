@@ -1,0 +1,32 @@
+<div class="col-12 row m-0 background-image justify-content-center">
+  <div class="box">
+    <form [formGroup]="formLogin" (submit)="login()">
+      <div class="container">
+        <div class="top-header">
+          <!-- <img class="icon" src="../../../assets/logoDMT.png" alt="waiting for image"> -->
+          <header>🧠 Letras Mágicas – Convierte las palabras en magia</header>
+        </div>
+        <div class="input-field">
+          <input type="text" class="input" placeholder="Nombre" formControlName="name" required>
+        </div>
+        <div class="input-field">
+          <input  class="input" #inputPass placeholder="edad" formControlName="age" required
+            autocomplete="off">
+            <small class="text-danger" *ngIf="formLogin.get('age')?.errors?.['required']">
+              ⚠️ La edad es obligatoria.
+            </small>
+            <small class="text-danger" *ngIf="formLogin.get('age')?.errors?.['pattern']">
+              ⚠️ Solo se permiten dos números.
+            </small>
+        </div>
+        <div class="input-field">
+          <button mat-flat-button type="submit" class="submit" [disabled]="!formLogin.valid">Iniciar Sesión</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="final">
+    <!-- <img src="../../../assets/IconTelefonica.png" class="telefonica" alt="waiting for image"> -->
+  </div>
+</div>
+<!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
