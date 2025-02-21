@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ParameterServicesService } from 'src/app/services/parameter-services.service';
 import { ResetServiceService } from 'src/app/services/reset-service.service';
 import Swal from 'sweetalert2';
@@ -16,30 +17,35 @@ export class LoginComponent {
     private parameterServis: ParameterServicesService,
     private resetService: ResetServiceService,
     private from: FormBuilder,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
   ){
     this.formLogin = this.from.group({
       name: [null, Validators.required],
-      age: [null, [Validators.required, Validators.pattern(/^\d{2}$/)]],
+      age: [null, [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
     })
   }
+  
   login(){
     this.parameterServis.name = this.formLogin.get('name')?.value;
-    console.log("this.parameterServis.name: ", this.parameterServis.name);
     this.parameterServis.age = this.formLogin.get('age')?.value;
-    console.log("this.parameterServis.age: ", this.parameterServis.age);
+
     if (this.parameterServis.age > 10){
       Swal.fire({
         title: 'Edad incorrecta',
-        icon: 'error'
-      })
+        imageUrl: '../../../assets/logo.png', // Reemplaza con tu imagen
+        imageWidth: 214, // Ajusta el tamaño
+        imageHeight: 125,
+        imageAlt: 'Error',
+        customClass: {
+          image: 'extreme-shake' // Clase CSS para la animación
+        }
+      });
       this.resetService.resetservice();
-
-      this.formLogin = this.from.group({
-        name: [null, Validators.required],
-        age: [null, [Validators.required, Validators.pattern(/^\d{2}$/)]],
-      })
-
+      this.formLogin.reset();
+    }else{
+      localStorage.setItem('isAuthenticated', 'true'); // Guardar sesión
+      this.router.navigate(['/Home']);
     }
 
   }

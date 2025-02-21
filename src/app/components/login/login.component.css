@@ -43,7 +43,7 @@ header {
 /* Imagen del encabezado */
 .icon {
   display: block;
-  width: 80px;
+  width: 217px;
   margin: auto;
 }
 
@@ -144,3 +144,21 @@ i {
 .text-danger{
   color: white;
 }
+
+@keyframes extreme-shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(60px); }  /* Más desplazamiento */
+  20% { transform: translateX(-60px); }
+  30% { transform: translateX(60px); }
+  40% { transform: translateX(-60px); }
+  50% { transform: translateX(70px); }  /* Movimiento más fuerte */
+  60% { transform: translateX(-70px); }
+  70% { transform: translateX(70px); }
+  80% { transform: translateX(-70px); }
+  90% { transform: translateX(60px); }
+}
+
+.extreme-shake {
+  animation: extreme-shake 0.3s ease-in-out 9; /* Más rápido y repite 5 veces */
+}
+

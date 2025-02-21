@@ -10,13 +10,15 @@ import { LoginComponent } from './components/login/login.component';
 //angular material Modulo
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
