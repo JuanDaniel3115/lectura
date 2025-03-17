@@ -1,2 +1,30 @@
-<!-- <app-menu class="p-0" id="nav"></app-menu> -->
- <app-menu></app-menu>
+<div class="background-image"></div>
+<app-menu></app-menu>
+<app-spinner></app-spinner>
+
+<div class="content">
+
+  <mat-card class="large-card">
+    
+    <mat-card-header style="justify-content: center;">
+      <mat-card-title>Aprende las Vocales</mat-card-title>
+      <mat-card-subtitle>Escucha y repite la vocal</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>Presiona el botón para escuchar la vocal y luego repítela.</p>
+      <!-- Botón que genera el audio de la vocal 'A' -->
+      <button mat-button (click)="playVowelSound(this.Vocal[this.random])">Reproducir vocal {{this.Vocal[this.random]}}</button>
+      <!-- Botón que inicia el reconocimiento de voz -->
+      <button mat-button (click)="startRecognition()">Repetir</button>
+      <p><strong>Lo que se está reconociendo:</strong> {{ recognizedText }}</p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <!-- El botón "Siguiente" se habilita solo si la pronunciación es correcta -->
+      <button mat-button [disabled]="!isCorrect">Siguiente</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+

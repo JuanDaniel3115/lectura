@@ -33,12 +33,12 @@ export class LoginComponent {
     if (this.parameterServis.age > 10){
       Swal.fire({
         title: 'Edad incorrecta',
-        imageUrl: '../../../assets/logo.png', // Reemplaza con tu imagen
-        imageWidth: 214, // Ajusta el tamaño
-        imageHeight: 125,
+        imageUrl: '../../../assets/leonMalo-01.png', 
+        imageWidth: 214, 
+        imageHeight: 218,
         imageAlt: 'Error',
         customClass: {
-          image: 'extreme-shake' // Clase CSS para la animación
+          image: 'extreme-shake' 
         }
       });
       this.resetService.resetservice();

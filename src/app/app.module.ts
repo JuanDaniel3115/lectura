@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MenuComponent } from './components/menu/menu.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,

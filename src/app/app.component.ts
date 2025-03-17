@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Aprende a leer';
+  title = 'Yo Leo';
   constructor(){
     localStorage.removeItem('isAuthenticated');
   }

@@ -1,3 +1,36 @@
-#nav {
-    display: none;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../assets/menu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #26123d;
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.large-card {
+  width: 80vw;        /* Ajusta el ancho en función del viewport */
+  max-width: 600px;     /* Ancho máximo deseado */
+  min-height: 50vh;     /* Altura mínima, ajusta según tus necesidades */
+  padding: 20px;        /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
